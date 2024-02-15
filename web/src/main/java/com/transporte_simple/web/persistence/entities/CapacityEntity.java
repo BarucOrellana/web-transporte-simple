@@ -1,28 +1,31 @@
 package com.transporte_simple.web.persistence.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Table(name = "capacity")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class CapacityEntity {
 
     @Id
-    @Column
+    @Column(name = "id_capacity")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column(name = "1000kg+")
-    private boolean thousandOrMore;
-    @Column(name = "3000kg+")
-    private boolean threeThousandOrMore;
-    @Column(name = "5000kg+")
-    private boolean fiveThousandOrMore;
-    @Column(name = "10000kg+")
-    private boolean tenThousandOrMore;
-    @Column(name = "15000kg+")
-    private boolean fifteenThousandOrMore;
-    @Column(name = "20000kg+")
-    private boolean twentyThousandOrMore;
-    @Column(name = "25000kg+")
-    private boolean twentyFiveThousandOrMore;
+    private int idCapacity;
+    @Column
+    private String capacity;
+    @OneToMany(mappedBy = "capacity", fetch = FetchType.LAZY)
+    private List<ProviderEntity> providers;
+
+    @OneToMany(mappedBy = "capacityFreight", fetch = FetchType.LAZY)
+    private List<FreightEntity> freights;
 
 }
