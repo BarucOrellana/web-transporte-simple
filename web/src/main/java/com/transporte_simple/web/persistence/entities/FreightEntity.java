@@ -23,7 +23,7 @@ public class FreightEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idFreight;
     @Id
-    @Column(name = "id_provider", nullable = false)
+    @Column(name = "id_seller", nullable = false)
     private int idSeller;
     @Column(columnDefinition = "DATETIME", nullable = false)
     private LocalDateTime date;
