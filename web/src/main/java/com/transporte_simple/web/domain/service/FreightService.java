@@ -24,4 +24,11 @@ public class FreightService {
         return this.freightRepository.findBySeller(idSeller);
     }
 
+    public FreightEntity save(FreightEntity freight){
+        return this.freightRepository.save(freight);
+    }
+    public boolean exists(Integer id){
+        return this.freightRepository.existsById(id);
+    }
+
 }
