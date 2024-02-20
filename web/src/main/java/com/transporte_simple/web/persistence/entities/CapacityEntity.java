@@ -19,7 +19,7 @@ public class CapacityEntity {
     @Id
     @Column(name = "id_capacity")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idCapacity;
+    private Integer idCapacity;
     @Column
     private String capacity;
     @OneToMany(mappedBy = "capacity", fetch = FetchType.LAZY)

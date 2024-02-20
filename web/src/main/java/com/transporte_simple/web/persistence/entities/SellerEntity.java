@@ -19,7 +19,7 @@ public class SellerEntity {
     @Id
     @Column(name = "id_seller")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idSeller;
+    private Integer idSeller;
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)

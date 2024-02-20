@@ -19,7 +19,7 @@ public class ProductsEntity {
     @Id
     @Column(name = "id_product")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idProduct;
+    private Integer idProduct;
     @Column
     private String product;
     @ManyToMany(mappedBy = "productsProvider")

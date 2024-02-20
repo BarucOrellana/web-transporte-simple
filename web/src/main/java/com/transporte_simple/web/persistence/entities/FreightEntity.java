@@ -21,10 +21,10 @@ public class FreightEntity {
     @Id
     @Column(name = "id_freight")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idFreight;
+    private Integer idFreight;
     @Id
     @Column(name = "id_seller", nullable = false)
-    private int idSeller;
+    private Integer idSeller;
     @Column(columnDefinition = "DATETIME", nullable = false)
     private LocalDateTime date;
     @Column

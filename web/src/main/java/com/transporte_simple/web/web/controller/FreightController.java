@@ -36,4 +36,12 @@ public class FreightController {
         }
         return ResponseEntity.badRequest().build();
     }
+    @PutMapping("/update-freight")
+    public ResponseEntity<FreightEntity> update(@RequestParam FreightEntity freight) {
+        if (freight.getFreights() != null && this.freightService.exists(freight.getIdFreight())) {
+            return ResponseEntity.ok(this.freightService.save(freight));
+        }
+        return ResponseEntity.badRequest().build();
+    }
+
 }

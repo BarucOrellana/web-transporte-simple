@@ -18,7 +18,7 @@ public class AdministratorEntity {
     @Id
     @Column(name = "id_admin")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idAdmin;
+    private Integer idAdmin;
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)
