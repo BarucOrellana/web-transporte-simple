@@ -1,5 +1,6 @@
 package com.transporte_simple.web.persistence.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -36,7 +37,7 @@ public class SellerEntity {
     @JoinTable(name = "seller_products", joinColumns = @JoinColumn(name = "id_seller", referencedColumnName = "id_seller"),
             inverseJoinColumns = @JoinColumn(name = "id_product", referencedColumnName = "id_product"))
     private List<ProductsEntity> productsSeller;
-    @OneToMany(mappedBy = "freights")
-    @OrderBy("id_freight DESC")
+    @OneToMany(mappedBy = "seller", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<FreightEntity> freights;
 }

@@ -1,5 +1,6 @@
 package com.transporte_simple.web.persistence.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,9 +24,10 @@ public class CapacityEntity {
     @Column
     private String capacity;
     @OneToMany(mappedBy = "capacity", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<ProviderEntity> providers;
-
-    @OneToMany(mappedBy = "capacityFreight", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "capacity", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<FreightEntity> freights;
 
 }

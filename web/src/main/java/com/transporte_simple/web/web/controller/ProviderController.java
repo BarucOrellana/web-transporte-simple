@@ -19,13 +19,13 @@ public class ProviderController {
 
    @PostMapping("/new-provider")
     public ResponseEntity<ProviderEntity> save(@RequestBody ProviderEntity provider) {
-        if (!this.providerService.exists(provider.getIdProvider())) {
+        if (provider.getIdProvider() == null || !this.providerService.exists(provider.getIdProvider())) {
             return ResponseEntity.ok(this.providerService.save(provider));
         }
 
         return ResponseEntity.badRequest().build();
     }
-    @PutMapping("/new-provider")
+    @PutMapping("/update-provider")
     public ResponseEntity<ProviderEntity> update(@RequestBody ProviderEntity provider) {
         if (provider.getIdProvider() != null && this.providerService.exists(provider.getIdProvider())) {
             return ResponseEntity.ok(this.providerService.save(provider));

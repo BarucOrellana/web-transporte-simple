@@ -19,7 +19,7 @@ public class SellerController {
 
     @PostMapping("/new-seller")
     public ResponseEntity<SellerEntity> save(@RequestBody SellerEntity seller) {
-        if (!this.sellerService.exists(seller.getIdSeller())) {
+        if (seller.getIdSeller() == null || !this.sellerService.exists(seller.getIdSeller())) {
             return ResponseEntity.ok(this.sellerService.save(seller));
         }
 

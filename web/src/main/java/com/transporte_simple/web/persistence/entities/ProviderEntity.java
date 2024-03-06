@@ -20,6 +20,8 @@ public class ProviderEntity {
     @Column(name = "id_provider")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idProvider;
+    @Column(name = "id_capacity", nullable = false)
+    private Integer idCapacity;
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)

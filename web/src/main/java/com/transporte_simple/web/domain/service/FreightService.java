@@ -30,5 +30,8 @@ public class FreightService {
     public boolean exists(Integer id){
         return this.freightRepository.existsById(id);
     }
+    public void delete(Integer id){
+        this.freightRepository.deleteById(id);
+    }
 
 }
