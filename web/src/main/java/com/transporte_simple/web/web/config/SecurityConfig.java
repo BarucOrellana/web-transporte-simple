@@ -2,6 +2,7 @@ package com.transporte_simple.web.web.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -17,11 +18,13 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(customizeRequests -> {
                             customizeRequests
+                                    .requestMatchers(HttpMethod.GET,"/**").permitAll()
+                                    .requestMatchers(HttpMethod.DELETE, "/seller", "/provider").denyAll()
                                     .anyRequest()
                                     .authenticated();
                         }
                 )
-                .csrf(AbstractHttpConfigurer::disable)
+                .csrf(AbstractHttpConfigurer::disable).cors(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults());
 
         return http.build();
