@@ -25,15 +25,11 @@ public class ProviderEntity {
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)
-    private String password;
-    @Column(nullable = false)
     private String rfc;
     @Column(nullable = false)
     private String email;
     @Column(name = "phone_number")
     private String phoneNumber;
-    @Column(nullable = false)
-    private String role;
    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(name = "provider_products", joinColumns = @JoinColumn(name = "id_provider", referencedColumnName = "id_provider"),
             inverseJoinColumns = @JoinColumn(name = "id_product", referencedColumnName = "id_product"))

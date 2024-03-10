@@ -24,15 +24,11 @@ public class SellerEntity {
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)
-    private String password;
-    @Column(nullable = false)
     private String rfc;
     @Column(nullable = false)
     private String email;
     @Column(name = "phone_number", nullable = false)
     private String phoneNumber;
-    @Column(nullable = false)
-    private String role;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(name = "seller_products", joinColumns = @JoinColumn(name = "id_seller", referencedColumnName = "id_seller"),
             inverseJoinColumns = @JoinColumn(name = "id_product", referencedColumnName = "id_product"))
