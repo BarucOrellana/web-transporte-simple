@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "user_rol")
+@IdClass(UserRoleId.class)
 @Getter
 @Setter
 @NoArgsConstructor

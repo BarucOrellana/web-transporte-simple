@@ -8,9 +8,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "freights")
+@IdClass(FreightEntityId.class)
 @Getter
 @Setter
 @NoArgsConstructor
@@ -35,6 +37,10 @@ public class FreightEntity {
     @ManyToOne
     @JoinColumn(name = "id_capacity", referencedColumnName = "id_capacity", insertable = false, updatable = false)
     private CapacityEntity capacity;
+    @ManyToOne
+    @JoinColumn(name = "id_product", referencedColumnName = "id_product", insertable = false, updatable = false)
+    private ProductsEntity products;
     @Column
     private String destination;
+
 }

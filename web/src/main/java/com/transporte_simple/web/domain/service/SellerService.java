@@ -1,9 +1,12 @@
 package com.transporte_simple.web.domain.service;
 
+import com.transporte_simple.web.persistence.entities.FreightEntity;
 import com.transporte_simple.web.persistence.entities.SellerEntity;
 import com.transporte_simple.web.persistence.repositories.SellerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class SellerService {
@@ -14,6 +17,7 @@ public class SellerService {
         this.sellerRepository = sellerRepository;
     }
 
+    public SellerEntity getSeller(int idSeller){return this.sellerRepository.getSeller(idSeller); }
     public SellerEntity save(SellerEntity seller){
         return this.sellerRepository.save(seller);
     }

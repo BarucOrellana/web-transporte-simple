@@ -29,10 +29,6 @@ public class SellerEntity {
     private String email;
     @Column(name = "phone_number", nullable = false)
     private String phoneNumber;
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-    @JoinTable(name = "seller_products", joinColumns = @JoinColumn(name = "id_seller", referencedColumnName = "id_seller"),
-            inverseJoinColumns = @JoinColumn(name = "id_product", referencedColumnName = "id_product"))
-    private List<ProductsEntity> productsSeller;
     @OneToMany(mappedBy = "seller", fetch = FetchType.LAZY)
     @JsonIgnore
     private List<FreightEntity> freights;

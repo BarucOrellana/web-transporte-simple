@@ -17,12 +17,16 @@ public class SellerController {
         this.sellerService = sellerService;
     }
 
+    @GetMapping("/my-account/{id_seller}")
+    public ResponseEntity<SellerEntity> getSeller(@PathVariable("id_seller") int idSeller){
+        return ResponseEntity.ok(this.sellerService.getSeller(idSeller));
+    }
+
     @PostMapping("/new-seller")
     public ResponseEntity<SellerEntity> save(@RequestBody SellerEntity seller) {
         if (seller.getIdSeller() == null || !this.sellerService.exists(seller.getIdSeller())) {
             return ResponseEntity.ok(this.sellerService.save(seller));
         }
-
         return ResponseEntity.badRequest().build();
     }
     @PutMapping("/update-seller")
@@ -32,4 +36,5 @@ public class SellerController {
         }
         return ResponseEntity.badRequest().build();
     }
+
 }

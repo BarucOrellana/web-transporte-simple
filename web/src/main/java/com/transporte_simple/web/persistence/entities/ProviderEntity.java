@@ -30,10 +30,6 @@ public class ProviderEntity {
     private String email;
     @Column(name = "phone_number")
     private String phoneNumber;
-   @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-    @JoinTable(name = "provider_products", joinColumns = @JoinColumn(name = "id_provider", referencedColumnName = "id_provider"),
-            inverseJoinColumns = @JoinColumn(name = "id_product", referencedColumnName = "id_product"))
-    private List<ProductsEntity> productsProvider;
     @ManyToOne
     @JoinColumn(name = "id_capacity", referencedColumnName = "id_capacity", insertable = false, updatable = false)
     private CapacityEntity capacity;
