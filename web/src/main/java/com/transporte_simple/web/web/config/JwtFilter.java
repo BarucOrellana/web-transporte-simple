@@ -31,12 +31,12 @@ public class JwtFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
-        if (authHeader == null || authHeader.isEmpty() || authHeader.startsWith("Bearer")){
+        if (authHeader == null || authHeader.isEmpty() || !authHeader.startsWith("Bearer")){
             filterChain.doFilter(request,response);
             return;
         }
 
-        String jwt = authHeader.split("")[1].trim();
+        String jwt = authHeader.split(" ")[1].trim();
         if (!this.jwtUtil.isValid(jwt)){
             filterChain.doFilter(request,response);
             return;

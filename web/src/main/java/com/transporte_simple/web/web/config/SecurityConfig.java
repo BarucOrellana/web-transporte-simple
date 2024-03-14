@@ -33,15 +33,11 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(customizeRequests -> {
                             customizeRequests
-                                    .requestMatchers("/transporte_simple/auth/**").permitAll()
-                                    .requestMatchers(HttpMethod.GET,"/transporte_simple/freights/**").permitAll()
-                                    .requestMatchers(HttpMethod.POST, "/transporte_simple/freights/**").hasAnyRole("ADMIN", "SELLER")
-                                    .requestMatchers(HttpMethod.PUT, "/transporte_simple/freights/**").hasAnyRole("ADMIN", "SELLER")
-                                    .requestMatchers(HttpMethod.DELETE, "/transporte_simple/freights/**").hasAnyRole("ADMIN", "SELLER")
-                                    .requestMatchers(HttpMethod.POST, "/transporte_simple/provider/**").hasAnyRole("ADMIN", "PROVIDER")
-                                    .requestMatchers(HttpMethod.PUT, "/transporte_simple/provider/**").hasAnyRole("ADMIN", "PROVIDER")
-                                    .requestMatchers(HttpMethod.POST, "/transporte_simple/seller/**").hasAnyRole("ADMIN", "SELLER")
-                                    .requestMatchers(HttpMethod.PUT, "/transporte_simple/seller/**").hasAnyRole("ADMIN", "SELLER")
+                                    .requestMatchers("/auth/**").permitAll()
+                                    .requestMatchers(HttpMethod.GET,"/freights/**").permitAll()
+                                    .requestMatchers("/freights/**").hasAnyRole("ADMIN", "SELLER")
+                                    .requestMatchers("/seller/**").hasAnyRole("ADMIN", "SELLER")
+                                    .requestMatchers("/provider/**").hasAnyRole("ADMIN", "PROVIDER")
                                     .anyRequest()
                                     .authenticated();
                         }
