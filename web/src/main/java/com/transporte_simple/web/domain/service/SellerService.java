@@ -18,8 +18,7 @@ public class SellerService {
     }
 
     public SellerEntity getSeller(int idSeller){return this.sellerRepository.getSeller(idSeller); }
-    public SellerEntity save(SellerEntity seller){
-        return this.sellerRepository.save(seller);
+    public SellerEntity save(SellerEntity seller){return this.sellerRepository.save(seller);
     }
     public boolean exists(Integer id){
         return this.sellerRepository.existsById(id);

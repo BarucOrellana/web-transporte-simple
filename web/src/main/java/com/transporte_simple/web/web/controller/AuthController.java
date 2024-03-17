@@ -1,6 +1,6 @@
 package com.transporte_simple.web.web.controller;
 
-import com.transporte_simple.web.domain.dto.LoginDto;
+import com.transporte_simple.web.domain.dto.UserDto;
 import com.transporte_simple.web.web.config.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -27,7 +27,7 @@ public class AuthController {
 
 
     @PostMapping("/login")
-    public ResponseEntity<Void> login(@RequestBody LoginDto dto){
+    public ResponseEntity<Void> login(@RequestBody UserDto dto){
         UsernamePasswordAuthenticationToken login = new UsernamePasswordAuthenticationToken(dto.getUsername(), dto.getPassword());
         Authentication authentication = this.authenticationManager.authenticate(login);
         String jwt = jwtUtil.create(dto.getUsername());
