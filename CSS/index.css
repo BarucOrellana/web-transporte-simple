@@ -1,0 +1,71 @@
+.menu {
+    background-color: #333; /* Color de fondo del menú */
+    padding: 10px 0; /* Espacio alrededor del menú */
+}
+
+.menu ul {
+    list-style-type: none; /* Quitamos los puntos de la lista */
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centramos los elementos de la lista */
+}
+
+.menu ul li {
+    display: inline; /* Mostramos los elementos de la lista en línea */
+    margin-right: 20px; /* Espacio entre los elementos de la lista */
+}
+
+.menu ul li a {
+    color: #fff; /* Color del texto del enlace */
+    text-decoration: none; /* Quitamos la subrayado del enlace */
+    padding: 5px 10px; /* Espacio alrededor del texto del enlace */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Efecto de transición para el cambio de color de fondo */
+}
+
+.menu ul li a:hover {
+    background-color: #555; /* Color de fondo al pasar el cursor sobre el enlace */
+}
+
+body {
+    background-color: #f0f8ff; /* Color de fondo azul claro */
+    font-family: Arial, sans-serif; /* Fuente predeterminada */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1e90ff; /* Color de fondo azul */
+    color: #fff; /* Color de texto blanco */
+    text-align: center; /* Centrar texto */
+    padding: 20px 0; /* Espaciado alrededor del título */
+}
+
+.container {
+    max-width: 800px; /* Ancho máximo del contenido */
+    margin: auto; /* Centrar contenido horizontalmente */
+    padding: 20px; /* Espaciado alrededor del contenido */
+}
+
+.viajes {
+    background-color: #fff; /* Color de fondo blanco */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow-y: auto; /* Habilitar desplazamiento vertical si es necesario */
+    max-height: 400px; /* Altura máxima */
+}
+
+.viaje {
+    margin-bottom: 20px; /* Espacio entre elementos */
+    border: 1px solid #ddd; /* Borde sólido gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+}
+p{
+    background-color: #1e90ff; /* Color de fondo azul */
+    color: #fff; /* Color de texto blanco */
+    text-align: center; /* Centrar texto */
+    padding: 20px 0; /* Espaciado alrededor del título */
+    font-size: large; /*Tamaño de los parrafos*/
+}
