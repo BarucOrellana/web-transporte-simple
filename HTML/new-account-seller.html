@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/new-account-seller.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="C:\Users\baruc\Desktop\BARUC\TRANSPORTE_SIMPLE\HTML\index.html">Inicio</a></li>
+            <li><a href="C:\Users\baruc\Desktop\BARUC\TRANSPORTE_SIMPLE\HTML\login.html">Iniciar sesión</a></li>
+            <li><a href="C:\Users\baruc\Desktop\BARUC\TRANSPORTE_SIMPLE\HTML\new-account-seller.html">¿Tienes rutas que necesiten transporte?</a></li>
+            <li><a href="C:\Users\baruc\Desktop\BARUC\TRANSPORTE_SIMPLE\HTML\new-account-provider.html">¿Eres proveedor de transporte y buscas nuevos clientes?</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>Crea tu cuenta como cliente</header>
+        <label for="username">Usuario</label>
+        <input type="text" id="username">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password">
+        <button id="login-btn">Iniciar Sesión</button>
+    </div>
+    <script>
+        // Obtener referencia al botón de inicio de sesión
+        var loginBtn = document.getElementById('login-btn');
+    
+        // Agregar un evento de clic al botón
+        loginBtn.addEventListener('click', function() {
+            // Obtener referencias a los campos de entrada
+            var usernameInput = document.getElementById('username');
+            var passwordInput = document.getElementById('password');
+    
+            // Limpiar los valores de los campos de entrada
+            usernameInput.value = '';
+            passwordInput.value = '';
+    
+            // Redirigir a la página de inicio
+            window.location.href = "index.html"; // Cambia "index.html" por la ruta de tu página de inicio
+            alert("¡Ya puedes iniciar sesión!")
+        });
+    </script>
+</body>
+</html>
