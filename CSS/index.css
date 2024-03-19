@@ -33,18 +33,16 @@ body {
     margin: 0;
     padding: 0;
 }
-
-header {
-    background-color: #1e90ff; /* Color de fondo azul */
-    color: #fff; /* Color de texto blanco */
-    text-align: center; /* Centrar texto */
-    padding: 20px 0; /* Espaciado alrededor del título */
+.img-tracto {
+    display: block;
+    margin: 0px auto;
+    max-width: 100%;
 }
 
 .container {
     max-width: 800px; /* Ancho máximo del contenido */
     margin: auto; /* Centrar contenido horizontalmente */
-    padding: 20px; /* Espaciado alrededor del contenido */
+    padding: 10px; /* Espaciado alrededor del contenido */
 }
 
 .viajes {
@@ -63,9 +61,53 @@ header {
     padding: 10px; /* Espaciado interno */
 }
 p{
-    background-color: #1e90ff; /* Color de fondo azul */
-    color: #fff; /* Color de texto blanco */
-    text-align: center; /* Centrar texto */
-    padding: 20px 0; /* Espaciado alrededor del título */
-    font-size: large; /*Tamaño de los parrafos*/
+    font-size: 18px;
 }
+.image-container {
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.image-section {
+    position: relative;
+    display: inline-block;
+}
+
+.image-text {
+    font-weight: bold;
+    position: absolute;
+    bottom: 250px;
+    background-color: rgba(123, 145, 235, 0.700);
+    color: #000;
+    padding: 20px 20px;
+    border-radius: 10px;
+    max-width: 30%;
+    height: 153px;
+    transform: translateX(-50%);
+    left: 30%;
+}
+.image-text2 {
+    font-weight: bold;
+    position: absolute;
+    bottom: 250px;
+    background-color: rgba(123, 145, 235, 0.700);;
+    color: #000;
+    padding: 20px 20px;
+    border-radius: 10px;
+    max-width: 30%;
+    transform: translateX(-50%);
+    left: 70%;
+}
+
+.img-tracto {
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    max-width: 100%;  
+}
+
+
+
+
+
