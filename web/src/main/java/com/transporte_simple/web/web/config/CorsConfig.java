@@ -14,7 +14,7 @@ public class CorsConfig {
     CorsConfigurationSource corsConfigurationSource (){
         CorsConfiguration corsConfiguration = new CorsConfiguration();
 
-        corsConfiguration.setAllowedOrigins(Arrays.asList("http://127.0.0.1:5500/"));
+        corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:5500/"));
         corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE"));
         corsConfiguration.setAllowedHeaders(Arrays.asList("*"));
 
