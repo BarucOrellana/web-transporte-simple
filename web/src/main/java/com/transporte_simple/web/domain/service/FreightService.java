@@ -1,6 +1,7 @@
 package com.transporte_simple.web.domain.service;
 
 import com.transporte_simple.web.persistence.entities.FreightEntity;
+import com.transporte_simple.web.persistence.projection.FreightSummary;
 import com.transporte_simple.web.persistence.repositories.FreightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,9 @@ public class FreightService {
     public List<FreightEntity> getAll(){
         return  this.freightRepository.findAll();
     }
-
+    public List<FreightSummary> getAllFreightSummaries(){
+        return this.freightRepository.findFreightSummaries();
+    }
     public List<FreightEntity> findBySeller(int idSeller){
         return this.freightRepository.findBySeller(idSeller);
     }

@@ -27,6 +27,8 @@ public class FreightEntity {
     private Integer idSeller;
     @Column(name = "id_capacity", nullable = false)
     private Integer idCapacity;
+    @Column(name = "id_product", nullable = false)
+    private Integer idProduct;
     @Column(columnDefinition = "DATETIME", nullable = false)
     private LocalDateTime date;
     @Column

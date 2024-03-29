@@ -2,6 +2,7 @@ package com.transporte_simple.web.web.controller;
 
 import com.transporte_simple.web.domain.service.FreightService;
 import com.transporte_simple.web.persistence.entities.FreightEntity;
+import com.transporte_simple.web.persistence.projection.FreightSummary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,10 @@ public class FreightController {
         return ResponseEntity.ok(this.freightService.getAll());
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<FreightSummary>> getAllFreightSummaries(){
+        return ResponseEntity.ok(this.freightService.getAllFreightSummaries());
+    }
     @GetMapping("/{id_freight}")
     public ResponseEntity<List<FreightEntity>> findBySeller(@PathVariable("id_freight") Integer idFreight){
         return ResponseEntity.ok(this.freightService.findBySeller(idFreight));

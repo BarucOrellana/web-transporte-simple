@@ -2,6 +2,7 @@ package com.transporte_simple.web.domain.service;
 
 import com.transporte_simple.web.persistence.entities.FreightEntity;
 import com.transporte_simple.web.persistence.entities.SellerEntity;
+import com.transporte_simple.web.persistence.projection.FreightSummary;
 import com.transporte_simple.web.persistence.repositories.SellerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

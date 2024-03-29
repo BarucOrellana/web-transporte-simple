@@ -33,9 +33,9 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(customizeRequests -> {
                             customizeRequests
+                                    .requestMatchers(HttpMethod.GET,"/freights/**").permitAll()
                                     .requestMatchers("/auth/**").permitAll()
                                     .requestMatchers("/new-account/**").permitAll()
-                                    .requestMatchers(HttpMethod.GET,"/freights/**").permitAll()
                                     .requestMatchers("/freights/**").hasAnyRole("ADMIN", "SELLER")
                                     .requestMatchers("/seller/**").hasAnyRole("ADMIN", "SELLER")
                                     .requestMatchers("/provider/**").hasAnyRole("ADMIN", "PROVIDER")
