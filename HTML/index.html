@@ -9,35 +9,65 @@
 <body>
     <nav class="menu">
         <ul>
-            <li><a href="C:\Users\baruc\Desktop\BARUC\TRANSPORTE_SIMPLE\HTML\index.html">Inicio</a></li>
-            <li><a href="C:\Users\baruc\Desktop\BARUC\TRANSPORTE_SIMPLE\HTML\login.html">Iniciar sesión</a></li>
-            <li><a href="C:\Users\baruc\Desktop\BARUC\TRANSPORTE_SIMPLE\HTML\new-account-seller.html">¿Tienes rutas que necesiten transporte?</a></li>
-            <li><a href="C:\Users\baruc\Desktop\BARUC\TRANSPORTE_SIMPLE\HTML\new-account-provider.html">¿Eres proveedor de transporte y buscas nuevos clientes?</a></li>
+            <li><a href="http://localhost:5500/HTML/index.html">Inicio</a></li>
+            <li class="dropdown">
+                <a>Iniciar sesión</a>
+                <ul class="dropdown-menu">
+                    <li><a href="http://localhost:5500/HTML/login-seller.html">Iniciar sesión como cliente</a></li>
+                    <li><a href="http://localhost:5500/HTML/login-provider.html">Iniciar sesión como proveedor</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a>Crear cuenta</a>
+                <ul class="dropdown-menu">
+                    <li><a href="http://localhost:5500/HTML/new-account-seller.html">¿Tienes rutas que necesiten transporte?</a></li>
+                    <li><a href="http://localhost:5500/HTML/new-account-provider.html">¿Eres proveedor de transporte y buscas nuevos clientes?</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
-    <div class="image-container">
-        <div class="image-section">
-            <img class="img-tracto" src="../IMG/Tracto-Camion.jpg" alt="Imagen de un camión">
-            <div class="image-text">
-                <h2>Encuentra transporte facilmente</h2>
-                <p>Transporte Simple te conecta con los mejores proveedores de transporte para que puedas enviar tus productos de manera rápida y segura.</p>
-            </div>
-            <div class="image-text2">
-                <h2>Encuentra viajes donde sea que estés</h2>
-                <p>¡Contacta con empresas que estan en busca de un transportista como tu!<p>
-            </div>
-        </div>
-    </div>
     <div class="container">
         <h2>Últimos viajes publicados</h2>
         <div class="viajes">
-            <div class="viaje">
-                <h3>Nombre del viaje</h3>
-                <p>Descripción del viaje...</p>
-                <p>Fecha: DD/MM/AAAA</p>
-                <p>Precio: $XX</p>
-            </div>
         </div>
     </div>
+    <script>
+        let freightsList = async () => {
+            const request = await fetch("http://localhost:8090/transporte_simple/freights/all", {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            });
+            const freights = await request.json();
+            let viajesContainer = document.querySelector('.viajes');
+
+            for (let freight of freights) {
+                const name = freight.name;
+                const date = new Date(freight.date).toLocaleDateString();
+                const description = freight.description;
+                const destination = freight.destination;
+                const capacity = freight.capacity;
+                const product = freight.product;
+
+                let viajeElement = document.createElement('div');
+                viajeElement.classList.add('viaje');
+                viajeElement.innerHTML = `
+                    <h3>${name}</h3>
+                    <p>Fecha: ${date}</p>
+                    <p>Destino: ${destination}</p>
+                    <p>Descripción: ${description}</p>
+                    <p>Capacidad: ${capacity}</p>
+                    <p>Producto: ${product}</p>
+                `;
+                viajesContainer.appendChild(viajeElement);
+            }
+        }
+        window.onload = freightsList;
+    </script>
+    
+</body>
+</html>
 </body>
 </html>
