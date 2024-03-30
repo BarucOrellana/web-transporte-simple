@@ -32,13 +32,15 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(customizeRequests -> {
-                            customizeRequests
-                                    .requestMatchers(HttpMethod.GET,"/freights/**").permitAll()
-                                    .requestMatchers("/auth/**").permitAll()
-                                    .requestMatchers("/new-account/**").permitAll()
-                                    .requestMatchers("/freights/**").hasAnyRole("ADMIN", "SELLER")
-                                    .requestMatchers("/seller/**").hasAnyRole("ADMIN", "SELLER")
-                                    .requestMatchers("/provider/**").hasAnyRole("ADMIN", "PROVIDER")
+                    customizeRequests
+                            .requestMatchers(HttpMethod.GET, "/freights/**").permitAll()
+                            .requestMatchers("/auth/**").permitAll()
+                            .requestMatchers("/new-account/**").permitAll()
+                            .requestMatchers("seller/new-seller").permitAll()
+                            .requestMatchers("provider/new-provider").permitAll()
+                            .requestMatchers("/freights/**").hasAnyRole("ADMIN", "SELLER")
+                            .requestMatchers("/seller/**").hasAnyRole("ADMIN", "SELLER")
+                            .requestMatchers("/provider/**").hasAnyRole("ADMIN", "PROVIDER")
                                     .anyRequest()
                                     .authenticated();
                         }
