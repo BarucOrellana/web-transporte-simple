@@ -78,22 +78,38 @@ label {
     margin-bottom: 5px; /* Espacio inferior entre etiquetas */
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="number"] {
     width: calc(100% - 20px); /* Ancho completo menos 20px de margen en cada lado */
     padding: 10px; /* Espaciado dentro del campo de entrada */
     margin-bottom: 10px; /* Espacio inferior entre campos de entrada */
     border: 1px solid #ccc; /* Borde sólido gris claro */
     border-radius: 5px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluir el borde en el cálculo del tamaño */
 }
 
-/* Estilos para el encabezado */
+/* Estilos para el campo de selección (dropdown) */
+select {
+    width: calc(100% - 20px); /* Ancho completo menos 20px de margen en cada lado */
+    padding: 10px; /* Espaciado dentro del campo de selección */
+    margin-bottom: 10px; /* Espacio inferior entre campos de selección */
+    border: 1px solid #ccc; /* Borde sólido gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluir el borde en el cálculo del tamaño */
+    background-color: #fff; /* Color de fondo blanco */
+    color: #333; /* Color de texto gris oscuro */
+}
+
+/* Estilos adicionales para el encabezado */
 header {
     background-color: #f9f9f9; /* Color de fondo gris claro */
     color: #000; /* Color de texto negro */
     padding: 20px 0; /* Espaciado alrededor del encabezado */
     border-radius: 10px 10px 0 0; /* Bordes redondeados solo en la parte superior */
-    font-size: x-large; /*Tamaño de la fuente*/
-    font-weight: bold; /*Fuente en negritas*/
+    font-size: x-large; /* Tamaño de la fuente */
+    font-weight: bold; /* Fuente en negritas */
 }
 
 /* Estilo para el botón de inicio de sesión */
@@ -110,3 +126,4 @@ header {
 #login-btn:hover {
     background-color: #007bff; /* Color de fondo azul más oscuro al pasar el ratón */
 }
+
