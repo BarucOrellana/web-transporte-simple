@@ -22,6 +22,10 @@ async function login(event) {
     if (request.ok) {
         const jwt = request.headers.get('Authorization');
         localStorage.setItem('jwt', jwt);
+
+        const idProvider = request.headers.get('idProvider');
+        localStorage.setItem('idProvider', idProvider);
+
         window.location.href = "http://localhost:5500/HTML/landing-page-provider.html";
     } else {
         console.error("Failed to authenticate");

@@ -20,8 +20,13 @@ async function login(event) {
     });
 
     if (request.ok) {
+
         const jwt = request.headers.get('Authorization');
         localStorage.setItem('jwt', jwt);
+
+        const idSeller = request.headers.get('idSeller');
+        localStorage.setItem('idSeller', idSeller);
+
         window.location.href = "http://localhost:5500/HTML/landing-page-seller.html";
     } else {
         console.error("Failed to authenticate");
