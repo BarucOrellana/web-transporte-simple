@@ -3,10 +3,12 @@ btn.addEventListener("click", createAccount);
 
 async function createAccount(event) {
     event.preventDefault();
+    const idProvider = localStorage.getItem("idProvider")
 
     let campos = {
         username: document.getElementById("username").value,
-        password: document.getElementById("password").value
+        password: document.getElementById("password").value,
+        provider: {idProvider: idProvider}
     };
 
     const request = await fetch("http://localhost:8090/transporte_simple/new-account/provider", {
@@ -20,7 +22,8 @@ async function createAccount(event) {
     });
 
     if (request.ok) {
-        window.location.href = "http://localhost:5500/HTML/new-profile-provider.html";
+        window.location.href = "http://localhost:5500/HTML/login-provider.html";
+        alert("Ya puedes iniciar sesión");
     } else {
         console.error("Failed to authenticate");
     }

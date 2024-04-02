@@ -4,10 +4,13 @@ btn.addEventListener("click", createAccount);
 
 async function createAccount(event) {
     event.preventDefault();
+    
+    const idSeller = localStorage.getItem("idSeller");
 
     let campos = {
         username: document.getElementById("username").value,
         password: document.getElementById("password").value,
+        seller:{idSeller: idSeller}
     };
 
     const request = await fetch("http://localhost:8090/transporte_simple/new-account/seller", {
@@ -21,7 +24,8 @@ async function createAccount(event) {
     });
 
     if (request.ok) {
-        window.location.href = "http://localhost:5500/HTML/new-profile-seller.html";
+        window.location.href = "http://localhost:5500/HTML/login-seller.html";
+        alert("Ya puedes iniciar sesión");
     } else {
         console.error("Failed to authenticate");
     }

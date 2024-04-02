@@ -22,9 +22,15 @@ async function createProfile(event) {
         credentials: 'same-origin'
     });
     if (request.ok) {
-        window.location.href = "http://localhost:5500/HTML/login-provider.html";
-        alert("Ya puedes iniciar sesión");
+        const requestJson = await request.json();
+        const idProvider = requestJson.idProvider;
+        localStorage.setItem("idProvider", idProvider);
+        if(idProvider != null){
+            window.location.href = "http://localhost:5500/HTML/new-account-provider.html";
+        }else{
+            console.error("Failed to create profile");
+        }
     } else {
-        console.error("Failed to authenticate");
+        console.error("Failed to create profile");
     }
 }
