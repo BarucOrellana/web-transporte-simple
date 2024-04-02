@@ -22,4 +22,10 @@ public class UserService {
     public boolean existByUsername(String username){
         return this.userRepository.findByUsername(username).isPresent();
     }
+    public Integer findIdSeller(String username){
+        return this.userRepository.findIdSeller(username);
+    }
+    public Integer findIdProvider(String username){
+        return this.userRepository.findIdProvider(username);
+    }
 }

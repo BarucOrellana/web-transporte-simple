@@ -32,4 +32,6 @@ public class SellerEntity {
     @OneToMany(mappedBy = "seller", fetch = FetchType.LAZY)
     @JsonIgnore
     private List<FreightEntity> freights;
+    @OneToOne(mappedBy = "seller")
+    private UserEntity user;
 }

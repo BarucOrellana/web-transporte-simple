@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Entity
 @Table(name = "provider")
 @Getter
@@ -33,4 +31,6 @@ public class ProviderEntity {
     @ManyToOne
     @JoinColumn(name = "id_capacity", referencedColumnName = "id_capacity", insertable = false, updatable = false)
     private CapacityEntity capacity;
+    @OneToOne(mappedBy = "provider")
+    private UserEntity user;
 }

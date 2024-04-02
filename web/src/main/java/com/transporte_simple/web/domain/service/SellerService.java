@@ -17,7 +17,6 @@ public class SellerService {
     public SellerService(SellerRepository sellerRepository) {
         this.sellerRepository = sellerRepository;
     }
-
     public SellerEntity getSeller(int idSeller){return this.sellerRepository.getSeller(idSeller); }
     public SellerEntity save(SellerEntity seller){return this.sellerRepository.save(seller);
     }

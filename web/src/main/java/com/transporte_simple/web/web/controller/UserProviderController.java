@@ -3,6 +3,7 @@ package com.transporte_simple.web.web.controller;
 import com.transporte_simple.web.domain.dto.UserDto;
 import com.transporte_simple.web.domain.service.UserRoleService;
 import com.transporte_simple.web.domain.service.UserService;
+import com.transporte_simple.web.persistence.entities.ProviderEntity;
 import com.transporte_simple.web.persistence.entities.UserEntity;
 import com.transporte_simple.web.persistence.entities.UserRoleEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,23 +33,26 @@ public class UserProviderController {
     }
 
     @PostMapping
-    public ResponseEntity<?> registerUser(@RequestBody UserDto userDTO) {
-        if (userService.existByUsername(userDTO.getUsername())) {
+    public ResponseEntity<?> registerUser(@RequestBody UserEntity userEntity) {
+        if (userService.existByUsername(userEntity.getUsername())) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
                     .body("El nombre de usuario ya está en uso.");
         }
 
 
         UserEntity user = new UserEntity();
-        user.setUsername(userDTO.getUsername());
-        String encodedPassword = passwordEncoder.encode(userDTO.getPassword());
+        ProviderEntity provider = new ProviderEntity();
+        user.setUsername(userEntity.getUsername());
+        String encodedPassword = passwordEncoder.encode(userEntity.getPassword());
         user.setPassword(encodedPassword);
         user.setDisable(false);
         user.setLocked(false);
+        user.setSeller(userEntity.getSeller());
+        user.setProvider(userEntity.getProvider());
         userService.save(user);
 
         UserRoleEntity role = new UserRoleEntity();
-        role.setUsername(userDTO.getUsername());
+        role.setUsername(userEntity.getUsername());
         role.setRole("PROVIDER");
         role.setGrantedDate(LocalDateTime.now());
         role.setUser(user);
