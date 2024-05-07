@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
 import java.util.Arrays;
 
 @Configuration
@@ -17,6 +16,7 @@ public class CorsConfig {
         corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:5500/"));
         corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE"));
         corsConfiguration.setAllowedHeaders(Arrays.asList("*"));
+        corsConfiguration.setExposedHeaders(Arrays.asList("Authorization", "idSeller", "idProvider"));
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", corsConfiguration );
