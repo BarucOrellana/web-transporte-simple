@@ -1,18 +1,17 @@
 package com.transporte_simple.web.persistence.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-import java.util.List;
+import java.time.LocalDate;
+
 
 @Entity
 @Table(name = "freights")
-@IdClass(FreightEntityId.class)
 @Getter
 @Setter
 @NoArgsConstructor
@@ -29,8 +28,8 @@ public class FreightEntity {
     private Integer idCapacity;
     @Column(name = "id_product", nullable = false)
     private Integer idProduct;
-    @Column(columnDefinition = "DATETIME", nullable = false)
-    private LocalDateTime date;
+    @Column(columnDefinition = "DATE", nullable = false)
+    private LocalDate date;
     @Column
     private String description;
     @ManyToOne
