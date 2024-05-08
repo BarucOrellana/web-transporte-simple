@@ -1,10 +1,10 @@
 package com.transporte_simple.web.persistence.projection;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public interface FreightSummary {
     String getName();
-    LocalDateTime getDate();
+    LocalDate getDate();
     String getDescription();
     String getDestination();
     String getCapacity();
