@@ -1,0 +1,61 @@
+body {
+    background-color: #f0f8ff; /* Color de fondo azul claro */
+    font-family: Arial, sans-serif; /* Fuente predeterminada */
+    margin: 0;
+    padding: 0;
+}
+/* Estilos para la barra lateral */
+.sidebar {
+    position: fixed; /* Fija la barra lateral en su lugar */
+    top: 0; /* Ajusta la posición en la parte superior */
+    left: 0; /* Ajusta la posición en el lado izquierdo */
+    height: 100%; /* Cubre toda la altura de la ventana */
+    width: 200px; /* Ancho de la barra lateral */
+    background-color: #333; /* Color de fondo */
+}
+
+/* Estilos para la lista de navegación */
+.sidebar ul {
+    list-style-type: none; /* Quita los puntos de la lista */
+    padding: 0; /* Elimina el relleno predeterminado */
+}
+
+/* Estilos para los elementos de la lista de navegación */
+.sidebar ul li {
+    padding: 10px;
+}
+
+/* Estilos para los enlaces de navegación */
+.sidebar ul li a {
+    color: #fff; /* Color del texto */
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+}
+
+/* Estilos para el enlace activo */
+.sidebar ul li a:hover {
+    background-color: #555; /* Cambia el color de fondo al pasar el mouse */
+}
+/* Estilos para el contenedor de los campos de entrada */
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px; /* Aumenta el espacio alrededor del contenido */
+}
+
+.viaje {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Espacio entre cada viaje */
+}
+
+.viaje h3 {
+    margin-top: 0; /* Elimina el margen superior de los títulos */
+}
+
+.viaje p {
+    font-size: 16px;
+}
+
