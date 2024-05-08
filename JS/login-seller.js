@@ -15,19 +15,17 @@ async function login(event) {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(campos),
-        credentials: 'same-origin'
+        body: JSON.stringify(campos)
     });
 
     if (request.ok) {
-
         const jwt = request.headers.get('Authorization');
         localStorage.setItem('jwt', jwt);
 
         const idSeller = request.headers.get('idSeller');
         localStorage.setItem('idSeller', idSeller);
 
-        window.location.href = "http://localhost:5500/HTML/landing-page-seller.html";
+        window.location.href = "http://localhost:5500/HTML/home-page-seller.html";
     } else {
         console.error("Failed to authenticate");
     }
