@@ -1,9 +1,7 @@
 package com.transporte_simple.web.web.controller;
 
-import com.transporte_simple.web.domain.dto.UserDto;
 import com.transporte_simple.web.domain.service.UserRoleService;
 import com.transporte_simple.web.domain.service.UserService;
-import com.transporte_simple.web.persistence.entities.ProviderEntity;
 import com.transporte_simple.web.persistence.entities.UserEntity;
 import com.transporte_simple.web.persistence.entities.UserRoleEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +39,6 @@ public class UserProviderController {
 
 
         UserEntity user = new UserEntity();
-        ProviderEntity provider = new ProviderEntity();
         user.setUsername(userEntity.getUsername());
         String encodedPassword = passwordEncoder.encode(userEntity.getPassword());
         user.setPassword(encodedPassword);

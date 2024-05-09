@@ -33,5 +33,6 @@ public class SellerEntity {
     @JsonIgnore
     private List<FreightEntity> freights;
     @OneToOne(mappedBy = "seller")
+    @JsonIgnore
     private UserEntity user;
 }

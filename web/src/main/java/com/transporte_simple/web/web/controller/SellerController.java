@@ -3,9 +3,10 @@ package com.transporte_simple.web.web.controller;
 import com.transporte_simple.web.domain.service.SellerService;
 import com.transporte_simple.web.persistence.entities.SellerEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("seller")
@@ -17,9 +18,12 @@ public class SellerController {
         this.sellerService = sellerService;
     }
 
-    @GetMapping("/my-account/{id_seller}")
-    public ResponseEntity<SellerEntity> getSeller(@PathVariable("id_seller") int idSeller){
-        return ResponseEntity.ok(this.sellerService.getSeller(idSeller));
+    @GetMapping("/account/{id_seller}")
+    public ResponseEntity<Optional<SellerEntity>> findSeller(@PathVariable("id_seller") Integer idSeller){
+        if(idSeller !=null){
+            return ResponseEntity.ok(this.sellerService.findSeller(idSeller));
+        }
+        return ResponseEntity.badRequest().build();
     }
 
     @PostMapping("/new-seller")
