@@ -32,9 +32,25 @@ public class UserSecurityService implements UserDetailsService {
         return User.builder()
                 .username(userEntity.getUsername())
                 .password(userEntity.getPassword())
-                .roles(roles)
+                .authorities(this.grantedAuthorities(roles))
                 .accountLocked(userEntity.getLocked())
                 .disabled(userEntity.getDisable())
                 .build();
+    }
+    private String[] getAuthorities(String role){
+        if ("ADMIN".equals(role) || "PROVIDER".equals(role) || "SELLER".equals(role)){
+            return new String[] {"contact_seller"};
+        }
+        return new String[] {};
+    }
+    private List<GrantedAuthority> grantedAuthorities(String[] roles){
+        List<GrantedAuthority> authorities = new ArrayList<>(roles.length);
+        for (String role: roles) {
+            authorities.add(new SimpleGrantedAuthority("ROLE_" + role));
+            for (String authority : this.getAuthorities(role)){
+                authorities.add(new SimpleGrantedAuthority(authority));
+            }
+        }
+        return authorities;
     }
 }

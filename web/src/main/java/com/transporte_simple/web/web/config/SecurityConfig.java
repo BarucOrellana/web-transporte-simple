@@ -38,6 +38,7 @@ public class SecurityConfig {
                             .requestMatchers("/new-account/**").permitAll()
                             .requestMatchers("seller/new-seller").permitAll()
                             .requestMatchers("provider/new-provider").permitAll()
+                            .requestMatchers("/seller/account/**").hasAuthority("contact_seller")
                             .requestMatchers("/freights/**").hasAnyRole("ADMIN", "SELLER")
                             .requestMatchers("/seller/**").hasAnyRole("ADMIN", "SELLER")
                             .requestMatchers("/provider/**").hasAnyRole("ADMIN", "PROVIDER")
