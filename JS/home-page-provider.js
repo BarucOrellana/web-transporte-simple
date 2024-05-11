@@ -1,15 +1,16 @@
 let freightsList = async () => {
-    const request = await fetch("http://localhost:8090/transporte_simple/freights/all", {
+    const requestFreight = await fetch("http://localhost:8090/transporte_simple/freights/all", {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         }
     });
-    const freights = await request.json();
-    let viajesContainer = document.querySelector('.viajes');
+    const freights = await requestFreight.json();
+    let freightContainer = document.querySelector('.viajes');
 
     for (let freight of freights) {
+        const id_seller = freight.id_seller;
         const name = freight.name;
         const date = new Date(freight.date).toLocaleDateString();
         const description = freight.description;
@@ -17,17 +18,25 @@ let freightsList = async () => {
         const capacity = freight.capacity;
         const product = freight.product;
 
-        let viajeElement = document.createElement('div');
-        viajeElement.classList.add('viaje');
-        viajeElement.innerHTML = `
-            <h3 href="">${name}</h3>
+        let freightElement = document.createElement('div');
+        freightElement.classList.add('viaje');
+        freightElement.innerHTML = `
+            <h3 class="contact-seller" data-id="${id_seller}">${name}</h3>
             <p>Fecha: ${date}</p>
             <p>Destino: ${destination}</p>
             <p>Descripción: ${description}</p>
             <p>Capacidad: ${capacity}</p>
             <p>Producto: ${product}</p>
         `;
-        viajesContainer.appendChild(viajeElement);
+        freightContainer.appendChild(freightElement);
     }
+    let contact = document.querySelectorAll('.contact-seller');
+    contact.forEach(saveId => {
+        saveId.addEventListener('click', () => {
+            const id_seller = saveId.getAttribute('data-id');
+            localStorage.setItem('id_seller', id_seller); 
+            window.location.href = '../HTML/contact-seller.html';
+        });
+    });
 }
 window.onload = freightsList;

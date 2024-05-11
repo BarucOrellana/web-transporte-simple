@@ -1,46 +1,42 @@
 body {
-    background-color: #f0f8ff; /* Color de fondo azul claro */
-    font-family: Arial, sans-serif; /* Fuente predeterminada */
+    background-color: #f0f8ff; 
+    font-family: Arial, sans-serif; 
     margin: 0;
     padding: 0;
 }
-/* Estilos para la barra lateral */
+
 .sidebar {
-    position: fixed; /* Fija la barra lateral en su lugar */
-    top: 0; /* Ajusta la posición en la parte superior */
-    left: 0; /* Ajusta la posición en el lado izquierdo */
-    height: 100%; /* Cubre toda la altura de la ventana */
-    width: 200px; /* Ancho de la barra lateral */
-    background-color: #333; /* Color de fondo */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    height: 100%; 
+    width: 200px; 
+    background-color: #333; 
 }
 
-/* Estilos para la lista de navegación */
 .sidebar ul {
-    list-style-type: none; /* Quita los puntos de la lista */
-    padding: 0; /* Elimina el relleno predeterminado */
+    list-style-type: none; 
+    padding: 0; 
 }
 
-/* Estilos para los elementos de la lista de navegación */
+
 .sidebar ul li {
     padding: 10px;
 }
 
-/* Estilos para los enlaces de navegación */
 .sidebar ul li a {
-    color: #fff; /* Color del texto */
-    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: #fff; 
+    text-decoration: none; 
 }
 
-/* Estilos para el enlace activo */
 .sidebar ul li a:hover {
-    background-color: #555; /* Cambia el color de fondo al pasar el mouse */
+    background-color: #555; 
 }
-/* Estilos para el contenedor de los campos de entrada */
 
 .container {
     max-width: 800px;
     margin: auto;
-    padding: 20px; /* Aumenta el espacio alrededor del contenido */
+    padding: 20px; 
 }
 
 .viaje {
@@ -48,14 +44,27 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; /* Espacio entre cada viaje */
+    margin-bottom: 20px;
 }
 
 .viaje h3 {
-    margin-top: 0; /* Elimina el margen superior de los títulos */
+    margin-top: 0;
 }
 
 .viaje p {
     font-size: 16px;
+}
+
+.contact-seller {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-seller:hover {
+    text-decoration: underline; 
+}
+
+.contact-seller:active {
+    background-color: #f0f0f0; 
 }
 
