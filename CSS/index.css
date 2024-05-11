@@ -63,10 +63,10 @@ body {
 }
 
 .hero {
-    background-color: #6e7affb3; /* Color de fondo gris */
-    color: #000; /* Color del texto */
+    background-color: #6e7affb3; 
+    color: #000; 
     text-align: center;
-    padding: 5px; /* Aumentamos el espacio alrededor del contenido */
+    padding: 5px; 
 }
 
 .hero h1 {
@@ -121,4 +121,25 @@ body {
     color: #fff;
     text-align: center;
     padding: 30px 0;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.viaje {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; 
+}
+
+.viaje h3 {
+    margin-top: 0;
+}
+
+.viaje p {
+    font-size: 16px;
 }
