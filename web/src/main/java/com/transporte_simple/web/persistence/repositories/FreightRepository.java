@@ -12,7 +12,7 @@ public interface FreightRepository extends ListCrudRepository<FreightEntity, Int
 
     @Query(value = "SELECT * FROM freights WHERE id_seller = :id_seller", nativeQuery = true)
     List<FreightEntity> findBySeller(@Param("id_seller") Integer idSeller);
-    @Query(value = "SELECT s.name AS name, f.date AS date, f.destination AS destination, f.description AS description, " +
+    @Query(value = "SELECT f.id_freight AS id_freight, s.name AS name, f.date AS date, f.destination AS destination, f.description AS description, " +
             "c.capacity AS capacity, p.product AS product " +
             "FROM freights f " +
             "JOIN seller s ON f.id_seller = s.id_seller " +

@@ -3,6 +3,7 @@ package com.transporte_simple.web.persistence.projection;
 import java.time.LocalDate;
 
 public interface FreightSummary {
+    Integer getIdSeller();
     String getName();
     LocalDate getDate();
     String getDescription();
