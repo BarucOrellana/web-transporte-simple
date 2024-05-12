@@ -10,7 +10,7 @@ let freightsList = async () => {
     let freightContainer = document.querySelector('.viajes');
 
     for (let freight of freights) {
-        const id_seller = freight.id_seller;
+        var idSeller = freight.idSeller;
         const name = freight.name;
         const date = new Date(freight.date).toLocaleDateString();
         const description = freight.description;
@@ -21,7 +21,7 @@ let freightsList = async () => {
         let freightElement = document.createElement('div');
         freightElement.classList.add('viaje');
         freightElement.innerHTML = `
-            <h3 class="contact-seller" data-id="${id_seller}">${name}</h3>
+            <h3 class="contact-seller">${name}</h3>
             <p>Fecha: ${date}</p>
             <p>Destino: ${destination}</p>
             <p>Descripción: ${description}</p>
@@ -33,7 +33,7 @@ let freightsList = async () => {
     let contact = document.querySelectorAll('.contact-seller');
     contact.forEach(saveId => {
         saveId.addEventListener('click', () => {
-            const id_seller = saveId.getAttribute('data-id');
+            const id_seller = idSeller;
             localStorage.setItem('id_seller', id_seller); 
             window.location.href = '../HTML/contact-seller.html';
         });
