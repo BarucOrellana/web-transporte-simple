@@ -4,6 +4,34 @@ body {
     padding: 0;
     background-color: #f0f0f0;
 }
+.sidebar {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    height: 100%; 
+    width: 200px; 
+    background-color: #333; 
+}
+
+.sidebar ul {
+    list-style-type: none; 
+    padding: 0; 
+}
+
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.sidebar ul li a {
+    color: #fff; 
+    text-decoration: none; 
+}
+
+.sidebar ul li a:hover {
+    background-color: #555; 
+}
+
 
 .container {
     max-width: 600px;
@@ -45,4 +73,13 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+#backButton {
+    margin-top: 20px;
+    background-color: #f44336;
+}
+
+#backButton:hover {
+    background-color: #d32f2f;
 }
