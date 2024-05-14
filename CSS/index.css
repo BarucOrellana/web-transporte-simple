@@ -7,7 +7,7 @@ body {
 
 .menu {
     background-color: #333;
-    padding: 10px 0;
+    padding: 5px 0;
     font-size: large;
 }
 
@@ -63,8 +63,8 @@ body {
 }
 
 .hero {
-    background-color: #6e7affb3; 
-    color: #000; 
+    background-color: #333; 
+    color: #fff; 
     text-align: center;
     padding: 5px; 
 }
