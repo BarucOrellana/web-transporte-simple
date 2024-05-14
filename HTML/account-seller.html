@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/accounts.css">
+    <title>Información del Cliente</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="home-page-seller.html">Inicio</a></li>
+                <li><a href="account-seller.html">Mi cuenta</a></li>
+            </ul>
+        </div>
+        <h1>Mi Información</h1>
+        <div class="data-seller"> </div>
+        <button id="editButton"class="editButton">Editar datos</button>
+        <form id="form" class="form">
+            <input type="hidden" id="seller-id">
+            <label for="name">Nombre</label>
+            <input type="text" id="name">
+            <label for="rfc">RFC</label>
+            <input type="text" id="rfc">
+            <label for="email">Correo</label>
+            <input type="text" id="email">
+            <label for="phoneNumber">Numero de telefono</label>
+            <input type="text" id="phoneNumber">
+            <button id="edit" type="submit">Editar</button>
+        </form>
+        <button id="backButton">Regresar</button>
+    </div>
+    <script src="../JS/account-seller.js"></script>
+</body>
+</html>
