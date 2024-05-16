@@ -5,6 +5,9 @@ import com.transporte_simple.web.persistence.repositories.ProviderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+import java.util.concurrent.RecursiveTask;
+
 @Service
 public class ProviderService {
     private final ProviderRepository providerRepository;
@@ -14,6 +17,9 @@ public class ProviderService {
         this.providerRepository = providerRepository;
     }
 
+    public Optional<ProviderEntity> findProvider(int idProvider){
+        return this.providerRepository.findById(idProvider);
+    }
     public ProviderEntity save(ProviderEntity provider){
         return this.providerRepository.save(provider);
     }

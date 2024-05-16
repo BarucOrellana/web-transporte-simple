@@ -1,5 +1,6 @@
 package com.transporte_simple.web.persistence.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,6 +32,7 @@ public class ProviderEntity {
     @ManyToOne
     @JoinColumn(name = "id_capacity", referencedColumnName = "id_capacity", insertable = false, updatable = false)
     private CapacityEntity capacity;
-    @OneToOne(mappedBy = "provider")
+    @OneToOne(mappedBy = "provider", fetch = FetchType.LAZY)
+    @JsonIgnore
     private UserEntity user;
 }
