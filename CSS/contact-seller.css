@@ -4,6 +4,7 @@ body {
     padding: 0;
     background-color: #f0f0f0;
 }
+
 .sidebar {
     position: fixed; 
     top: 0; 
@@ -11,13 +12,14 @@ body {
     height: 100%; 
     width: 200px; 
     background-color: #333; 
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar ul {
     list-style-type: none; 
     padding: 0; 
 }
-
 
 .sidebar ul li {
     padding: 10px;
@@ -26,12 +28,27 @@ body {
 .sidebar ul li a {
     color: #fff; 
     text-decoration: none; 
+    padding: 10px;
+    display: block;
 }
 
 .sidebar ul li a:hover {
     background-color: #555; 
 }
 
+.logout-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.logout-btn:hover {
+    background-color: #d32f2f;
+}
 
 .container {
     max-width: 600px;
@@ -59,7 +76,7 @@ strong {
     margin-right: 5px;
 }
 
-button {
+#backButton {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
@@ -69,13 +86,6 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-#backButton {
     margin-top: 20px;
     background-color: #f44336;
 }
@@ -83,3 +93,4 @@ button:hover {
 #backButton:hover {
     background-color: #d32f2f;
 }
+

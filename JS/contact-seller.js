@@ -41,3 +41,8 @@ window.onload = async () => {
 document.getElementById("backButton").addEventListener("click", () => {
     window.history.back();
 });
+
+document.getElementById("log-out").addEventListener("click", function() {
+    localStorage.clear();
+    window.location.href = "../HTML/index.html";
+});

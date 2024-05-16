@@ -40,3 +40,8 @@ let freightsList = async () => {
     });
 }
 window.onload = freightsList;
+
+document.getElementById("log-out").addEventListener("click", function() {
+    localStorage.clear();
+    window.location.href = "../HTML/index.html";
+});

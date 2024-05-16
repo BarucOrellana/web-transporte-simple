@@ -103,3 +103,7 @@ function fillForm(provider) {
     document.getElementById("phoneNumber").value = provider.phoneNumber;
 }
 
+document.getElementById("log-out").addEventListener("click", function() {
+    localStorage.clear();
+    window.location.href = "../HTML/index.html";
+});

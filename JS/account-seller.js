@@ -84,10 +84,12 @@ async function editDataSeller(event) {
 document.getElementById("editButton").addEventListener("click", () => {
     showForm();
 });
+
 function showForm(){
     let form = document.getElementById("form").style.visibility="visible";
     let button = document.getElementById("editButton").style.visibility="hidden";
 };
+
 function fillForm(seller) {
     document.getElementById("name").value = seller.name;
     document.getElementById("rfc").value = seller.rfc;
@@ -95,4 +97,7 @@ function fillForm(seller) {
     document.getElementById("phoneNumber").value = seller.phoneNumber;
 }
 
-
+document.getElementById("log-out").addEventListener("click", function() {
+    localStorage.clear();
+    window.location.href = "../HTML/index.html";
+});

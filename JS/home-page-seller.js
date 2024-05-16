@@ -34,3 +34,8 @@ async function login(event) {
         console.error("Failed to authenticate");
     }
 }
+
+document.getElementById("log-out").addEventListener("click", function() {
+    localStorage.clear();
+    window.location.href = "../HTML/index.html";
+});
