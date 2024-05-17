@@ -23,7 +23,7 @@ public class FreightService {
     public List<FreightSummary> getAllFreightSummaries(){
         return this.freightRepository.findFreightSummaries();
     }
-    public List<FreightEntity> findBySeller(int idSeller){
+    public List<FreightSummary> findBySeller(int idSeller){
         return this.freightRepository.findBySeller(idSeller);
     }
 

@@ -28,9 +28,9 @@ public class FreightController {
     public ResponseEntity<List<FreightSummary>> getAllFreightSummaries(){
         return ResponseEntity.ok(this.freightService.getAllFreightSummaries());
     }
-    @GetMapping("/{id_freight}")
-    public ResponseEntity<List<FreightEntity>> findBySeller(@PathVariable("id_freight") Integer idFreight){
-        return ResponseEntity.ok(this.freightService.findBySeller(idFreight));
+    @GetMapping("/{id_seller}")
+    public ResponseEntity<List<FreightSummary>> findBySeller(@PathVariable("id_seller") int idSeller){
+        return ResponseEntity.ok(this.freightService.findBySeller(idSeller));
     }
 
     @PostMapping("/new-freight")
