@@ -35,10 +35,13 @@ out/
 
 ### VS Code ###
 .vscode/
-
-### IMG ###
+node_modules/
+package-lock.json
+package.json
 IMG/
+### IMG ###
 
 ### Configuration ###
-web/src/main/resources/
-
+application-dev.properties
+application-dev.properties
+application.properties
