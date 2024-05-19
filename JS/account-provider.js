@@ -82,7 +82,7 @@ async function editDataProvider(event) {
     });
 
     if (request.ok) {
-        window.location.href = "http://localhost:5500/HTML/account-provider.html";
+        window.location.href = "../HTML/account-provider.html";
         alert("Su información fue editada");
     } else {
         console.error("Failed to authenticate");

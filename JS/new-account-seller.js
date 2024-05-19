@@ -24,7 +24,7 @@ async function createAccount(event) {
     });
 
     if (request.ok) {
-        window.location.href = "http://localhost:5500/HTML/login-seller.html";
+        window.location.href = "../HTML/login-seller.html";
         alert("Ya puedes iniciar sesión");
     } else {
         console.error("Failed to authenticate");

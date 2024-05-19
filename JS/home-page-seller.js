@@ -28,7 +28,7 @@ async function login(event) {
         credentials: 'same-origin'
     });
     if (request.ok) {
-        window.location.href = "http://localhost:5500/HTML/home-page-seller.html";
+        window.location.href = "../HTML/home-page-seller.html";
         alert("Viaje agregado");
     } else {
         console.error("Failed to authenticate");

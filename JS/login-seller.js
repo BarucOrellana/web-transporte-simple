@@ -25,7 +25,7 @@ async function login(event) {
         const idSeller = request.headers.get('idSeller');
         localStorage.setItem('idSeller', idSeller);
 
-        window.location.href = "http://localhost:5500/HTML/home-page-seller.html";
+        window.location.href = "../HTML/home-page-seller.html";
     } else {
         console.error("Failed to authenticate");
     }

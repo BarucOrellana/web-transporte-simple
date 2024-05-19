@@ -74,7 +74,7 @@ async function editDataSeller(event) {
         credentials: 'same-origin'
     });
     if (request.ok) {
-        window.location.href = "http://localhost:5500/HTML/account-seller.html";
+        window.location.href = "../HTML/account-seller.html";
         alert("Su información fue editada");
     } else {
         console.error("Failed to authenticate");

@@ -26,7 +26,7 @@ async function login(event) {
         const idProvider = request.headers.get('idProvider');
         localStorage.setItem('idProvider', idProvider);
 
-        window.location.href = "http://localhost:5500/HTML/home-page-provider.html";
+        window.location.href = "../HTML/home-page-provider.html";
     } else {
         console.error("Failed to authenticate");
     }

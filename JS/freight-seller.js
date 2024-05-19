@@ -90,7 +90,7 @@ async function editFreight(event) {
         credentials: 'same-origin'
     });
     if (request.ok) {
-        window.location.href = "http://localhost:5500/HTML/freight-seller.html";
+        window.location.href = "../HTML/freight-seller.html";
         alert("Viaje modificado");
     } else {
         console.error("Error al editar");
@@ -126,7 +126,7 @@ async function deleteFreight(idFreight) {
         credentials: 'same-origin'
     });
     if (request.ok) {
-        window.location.href = "http://localhost:5500/HTML/freight-seller.html";
+        window.location.href = "../HTML/freight-seller.html";
         alert("Viaje eliminado");
     } else {
         console.error("Error al eliminar");

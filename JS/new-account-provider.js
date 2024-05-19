@@ -22,7 +22,7 @@ async function createAccount(event) {
     });
 
     if (request.ok) {
-        window.location.href = "http://localhost:5500/HTML/login-provider.html";
+        window.location.href = "../HTML/login-provider.html";
         alert("Ya puedes iniciar sesión");
     } else {
         console.error("Failed to authenticate");

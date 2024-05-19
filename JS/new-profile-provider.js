@@ -26,7 +26,7 @@ async function createProfile(event) {
         const idProvider = requestJson.idProvider;
         localStorage.setItem("idProvider", idProvider);
         if(idProvider != null){
-            window.location.href = "http://localhost:5500/HTML/new-account-provider.html";
+            window.location.href = "../HTML/new-account-provider.html";
         }else{
             console.error("Failed to create profile");
         }
