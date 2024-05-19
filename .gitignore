@@ -38,10 +38,9 @@ out/
 node_modules/
 package-lock.json
 package.json
-IMG/
+
 ### IMG ###
+IMG/
 
 ### Configuration ###
-application-dev.properties
-application-dev.properties
-application.properties
+*.properties
