@@ -10,7 +10,7 @@ let freightsList = async () => {
     let freightContainer = document.querySelector('.viajes');
 
     for (let freight of freights) {
-        var idSeller = freight.idSeller;
+        const idSeller = freight.idSeller;
         const name = freight.name;
         const date = new Date(freight.date).toLocaleDateString();
         const description = freight.description;
@@ -29,15 +29,11 @@ let freightsList = async () => {
             <p>Producto: ${product}</p>
         `;
         freightContainer.appendChild(freightElement);
-    }
-    let contact = document.querySelectorAll('.contact-seller');
-    contact.forEach(saveId => {
-        saveId.addEventListener('click', () => {
-            const id_seller = idSeller;
-            localStorage.setItem('id_seller', id_seller); 
+        freightElement.querySelector('.contact-seller').addEventListener('click', () => {
+            localStorage.setItem('id_seller', idSeller);
             window.location.href = '../HTML/contact-seller.html';
         });
-    });
+    }
 }
 window.onload = freightsList;
 
