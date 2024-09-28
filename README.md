@@ -10,6 +10,8 @@ Los potenciales clientes subirán sus rutas con la información para realizar el
 <h3>Backend </h3>
 <li>Java: 17</li>
 <li>Spring Boot: 3.2.2</li>
+<li>Spring Security: 3.2.2</li>
+<li>Spring Data: 3.2.2</li>
 <li>Java-JWT: 4.4.0</li>
 
 <h3>Frontend</h3>
